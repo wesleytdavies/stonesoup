@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//the teleporter teleports the player as long as it doesn't teleport them into a wall
+/// <summary>
+/// The teleporter teleports the player as long as it doesn't teleport them into a wall.
+/// </summary>
 public class Teleporter : Tile {
     protected bool _isTeleporting = false;
     private const float _teleportationRadius = TILE_SIZE * 2f;
