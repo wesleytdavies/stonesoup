@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1020457524540292962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598489421797389001}
+  - component: {fileID: 1466278294000505151}
+  m_Layer: 0
+  m_Name: Room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1598489421797389001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020457524540292962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1466278294000505151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020457524540292962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c482eb3fb6a1c7f49883ec68fbc0806a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Taiyo
+  designedRoomFile: {fileID: 0}
+  localTilePrefabs:
+  - {fileID: 1249101369981090, guid: ad909242602e14ab893ee3381803cc01, type: 3}
+  - {fileID: 1097009321995878, guid: a0ef3fab886d20b47b66c7e1045b0a0e, type: 3}
+  - {fileID: 1097009321995878, guid: 4605a676477fa9943b27808651823825, type: 3}
+  - {fileID: 97679449016463917, guid: 4adf63d22735db54aacd82f10e20e5a4, type: 3}
+  - {fileID: 1312951893184288, guid: 7112a201c0248e6438914ba6b23f40c1, type: 3}
+  roomGridX: 0
+  roomGridY: 0
+  roomFiles:
+  - {fileID: 4900000, guid: adc1b748bca4f3c4fbd86cff3c9ec0ca, type: 3}
+  - {fileID: 4900000, guid: 6f8e9cad8ef09e34594210c8915fd175, type: 3}
+  - {fileID: 4900000, guid: b59f91b405333ca409852f919185d8f6, type: 3}
+  - {fileID: 4900000, guid: 92c32762c007ebd4ea0296c3ad953665, type: 3}
+  - {fileID: 4900000, guid: 907ef27deab89ae418ca4a9dd804ad1a, type: 3}
+  - {fileID: 4900000, guid: fb7b82936c6660f46b037632b75d7597, type: 3}
+  - {fileID: 4900000, guid: d76f96a2d126e5c4a9050de3efbf1d9a, type: 3}
+  - {fileID: 4900000, guid: f9be6b3da4d54314396a23dcb924a03e, type: 3}
+  - {fileID: 4900000, guid: e0c010671ca1ad64f8c8db0238f4d98c, type: 3}
+  - {fileID: 4900000, guid: 85d52ba202253b146aa586855e282149, type: 3}
+  - {fileID: 4900000, guid: bd7e1dd806308a34cb02477648657832, type: 3}
+  - {fileID: 4900000, guid: 0700457628972fa47a8f485840693209, type: 3}
+  - {fileID: 4900000, guid: 1f9046b3fb6331442944360fbf27034a, type: 3}
+  - {fileID: 4900000, guid: 3af3db09d05cede4c9e16f6bd406a1d9, type: 3}
+  - {fileID: 4900000, guid: 87f1f347d406f824ba85746820edd8a2, type: 3}
+  - {fileID: 4900000, guid: bd7e1dd806308a34cb02477648657832, type: 3}
+  - {fileID: 4900000, guid: bb8bb56f3cd4ce645829a96d5089a3f9, type: 3}
+  - {fileID: 4900000, guid: bb8bb56f3cd4ce645829a96d5089a3f9, type: 3}
+  - {fileID: 4900000, guid: 2fa7b4eda0cd1bc4d81a02d88ea83614, type: 3}
+  - {fileID: 4900000, guid: 36eb35e01ccba24439a595d23a457aa8, type: 3}
+  - {fileID: 4900000, guid: 8b161fa0a0da78e4684fff1e272ac07e, type: 3}
+  - {fileID: 4900000, guid: 0da1071744a65d045ac04b762a28c49b, type: 3}
+  spawnItem: 0.01
+  itemPrefabs:
+  - {fileID: 97679449016463917, guid: 1c2999a4497441348b5075be61f73adf, type: 3}
+  - {fileID: 97679449016463917, guid: 1c2999a4497441348b5075be61f73adf, type: 3}
+  - {fileID: 97679449016463917, guid: 4adf63d22735db54aacd82f10e20e5a4, type: 3}
+  - {fileID: 1312951893184288, guid: 7112a201c0248e6438914ba6b23f40c1, type: 3}
