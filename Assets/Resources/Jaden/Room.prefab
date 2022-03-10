@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7196755603412538644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5607538738658608939}
+  - component: {fileID: 5599064825977421589}
+  - component: {fileID: 2800039649300102708}
+  m_Layer: 0
+  m_Name: Room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5607538738658608939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196755603412538644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5599064825977421589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196755603412538644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cc9bf8017861e4f830cd58699145a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Jaden
+  designedRoomFile: {fileID: 4900000, guid: 260de811ec1d9cc4a867b3b798994885, type: 3}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0
+  RoomChoices:
+  - {fileID: 1684084013035132558, guid: 17fc8ae4f52e88841b678c4242493fd5, type: 3}
+  - {fileID: 2948909294069032210, guid: 1d2e11735ad232e4cb0b2a3addc80c45, type: 3}
+  - {fileID: 4970572102880820829, guid: a42674268f98a7a4ca7cd70a490528bc, type: 3}
+  - {fileID: 4365912665999343567, guid: 16ee1bff5ffa581488c2c087afe81528, type: 3}
+  - {fileID: 7110298579987408693, guid: 43147fa324d851046926e50b4c508233, type: 3}
+  - {fileID: 4487643880341675860, guid: 6a5322e2b942d3b41be0c6810b6bf192, type: 3}
+  - {fileID: 5509430431092184571, guid: 7c40fcd2153d047478cee97d834c0fc7, type: 3}
+  - {fileID: 215058467446866998, guid: ee3b1a7af0c275b4990b83a8be3c7c8b, type: 3}
+--- !u!114 &2800039649300102708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196755603412538644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fda1be0f47f4d2eb0cd4977c7295a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Jaden
+  designedRoomFile: {fileID: 4900000, guid: 260de811ec1d9cc4a867b3b798994885, type: 3}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0
