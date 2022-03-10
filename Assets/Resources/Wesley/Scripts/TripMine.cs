@@ -8,12 +8,19 @@ using System;
 /// </summary>
 public class TripMine : Tile {
     protected int _damageDealt = 1;
-    protected float _initalLeewayTime = 0.5f; //how much time the player has to react to stepping on a tripmine before it explodes
+    protected float _initalLeewayTime = 0.3f; //how much time the player has to react to stepping on a tripmine before it explodes
     protected float _maxTickingTime = 3f;
     protected float _explosionRadius = 0.75f;
     [SerializeField] protected AudioClip _trippedSound;
     [SerializeField] protected AudioClip _explosionSound;
     [SerializeField] protected AudioClip _deactivateSound;
+    protected Animator animator;
+
+    public override void init() {
+        base.init();
+        animator = GetComponent<Animator>();
+        animator.speed = 0f;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         Tile otherTile = collision.gameObject.GetComponent<Tile>();
@@ -46,6 +53,7 @@ public class TripMine : Tile {
                             tripperTile.takeDamage(this, _damageDealt, DamageType.Explosive);
                         }
                     }
+                    animator.speed = 1f;
                     deathSFX = _explosionSound;
                     die();
                     yield break;

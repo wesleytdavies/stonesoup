@@ -36,6 +36,10 @@ public class FriendlyEnemy : BasicAICreature
 
     public float friendlyRange = 4f;
 
+    public GameObject enemyUI;
+
+    static bool createdUI = false;
+
     public override void init()
     {
 
@@ -69,6 +73,13 @@ public class FriendlyEnemy : BasicAICreature
     {
         _targetGridPos = Tile.toGridCoord(globalX, globalY);
         _nextMoveCounter = Random.Range(timeBetweenMovesMin, timeBetweenMovesMax);
+        this.gameObject.name = "FriendlyEnemy";
+        //Create an UI if an UI does not exist
+        if (!createdUI)
+        {
+            createdUI = true;
+            Instantiate(enemyUI, Vector3.zero, Quaternion.identity);
+        }
     }
 
     void Update()

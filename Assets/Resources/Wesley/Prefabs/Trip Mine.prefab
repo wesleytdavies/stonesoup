@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -8029247309661990142}
   - component: {fileID: -4605380235942295812}
   - component: {fileID: -4943641796557602690}
+  - component: {fileID: 46032110248308912}
   m_Layer: 0
   m_Name: Trip Mine
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: af0fdcfd9b1114882be6af237f3c331d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 0.8, y: 1.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &-4605380235942295812
@@ -134,3 +135,22 @@ MonoBehaviour:
   _trippedSound: {fileID: 8300000, guid: fa7c61c654307444599178d7e3c1b5bd, type: 3}
   _explosionSound: {fileID: 8300000, guid: 29254cc2a127349dba04058bfe1fa833, type: 3}
   _deactivateSound: {fileID: 8300000, guid: df4b5718be0b44cb6ab736b4ff6ee4da, type: 3}
+--- !u!95 &46032110248308912
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690229324286977687}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2c561bda517546388a64fa86a735f2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
