@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//the dog is supposed to chase the bone and damage any enemies in its path. I haven't gotten it to work quite yet!
+/// <summary>
+/// The dog is supposed to chase the bone and damage any enemies in its path. I haven't gotten it to work quite yet!
+/// </summary>
 public class Dog : apt283BFSEnemy
 {
 	protected override void updatePathToTarget()

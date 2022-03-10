@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//the bone can be thrown, which attracts the dog. based off apt283Rock script
+/// <summary>
+/// The bone can be thrown, which attracts the dog. Based off apt283Rock script.
+/// </summary>
 public class Bone : Tile
 {
 	public Dog dogPrefab;
