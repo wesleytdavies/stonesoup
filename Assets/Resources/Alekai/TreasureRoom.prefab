@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7021796948544560322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8844376144338366378}
+  - component: {fileID: -2055848073557947434}
+  m_Layer: 0
+  m_Name: TreasureRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8844376144338366378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021796948544560322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2055848073557947434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021796948544560322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a083e9bcb664fb5a74a2558434b923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Alekai (treasure)
+  designedRoomFile: {fileID: 0}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0
+  rockPrefab: {fileID: 1249101369981090, guid: ad909242602e14ab893ee3381803cc01, type: 3}
+  sweetRockPrefab: {fileID: 4720954651547946300, guid: 43789118113284f19ae30671f6c8b482,
+    type: 3}
+  treasureList:
+  - {fileID: 5741611903107958666, guid: be1c1e755e61f4152b33463c98ae9999, type: 3}
+  - {fileID: 7414911920095147225, guid: 794ba254521444284a79456602d653d6, type: 3}
+  borderWallProbability: 0.7
+  sweetRockProbability: 0.1
+  treasureAmountMin: 2
+  treasureAmountMax: 4
+  treasureWallMinWidth: 4
+  treasureWallMaxWidth: 6
+  treasureWallMinHeight: 3
+  treasureWallMaxHeight: 5
