@@ -98,6 +98,12 @@ public class FriendlyEnemy : BasicAICreature
 
         updateSpriteSorting();
 
+        CheckIfShouldChange();
+
+    }
+
+    protected virtual void CheckIfShouldChange() {
+
         if(!isFriendly && Vector3.Distance(_playerTransform.position, this.transform.position) < friendlyRange && Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("FIENDLY!");
