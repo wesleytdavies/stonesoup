@@ -1243,6 +1243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allContributorIDs:
   - Wesley
+  - Taiyo
   - AP
 --- !u!4 &1420620112
 Transform:
