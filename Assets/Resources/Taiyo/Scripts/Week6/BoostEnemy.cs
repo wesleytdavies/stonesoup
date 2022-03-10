@@ -68,6 +68,8 @@ public class BoostEnemy : BasicAICreature
     {
         _targetGridPos = Tile.toGridCoord(globalX, globalY);
         _nextMoveCounter = Random.Range(timeBetweenMovesMin, timeBetweenMovesMax);
+
+        this.gameObject.name = "FriendlyEnemy";
     }
 
     void Update()
