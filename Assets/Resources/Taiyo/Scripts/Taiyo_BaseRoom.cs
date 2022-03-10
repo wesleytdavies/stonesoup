@@ -2,20 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
-public class TaiyoRoom : Room
+public class Taiyo_BaseRoom : Room
 {
 
-    [Header("DONT USE designedRoomFiles")] public TextAsset[] roomFiles;
+    [Header("PUT IN ROOM FILES HERE")] public TextAsset[] roomFiles;
 
-    private int _roomCount = 0;
-
-    [Header("Percentage of creating an item")] public float spawnItem = 0.02f;
-
-    [Header("Items to spawn randomly")] public GameObject[] itemPrefabs;
-
-
-    //MAP FOR DFS
-    private int[,] dfsMap;
+    private int[,] _dfsMap;
 
     private bool _initialSetup = false;
 
@@ -35,6 +27,8 @@ public class TaiyoRoom : Room
 
     public void SetupDatas()
     {
+        _initialSetup = true;
+
         //SET UP THE DATAS
         _roomDatas = new roomData[roomFiles.Length];
 
@@ -57,12 +51,8 @@ public class TaiyoRoom : Room
 
     public int[,] GetRandomRoomWithConstraints(ExitConstraint requiredExits)
     {
-        if(_initialSetup == false)
-        {
-            _initialSetup = true;
+        if (!_initialSetup)
             SetupDatas();
-        }
-
 
         int result = 0;
         bool l = requiredExits.leftExitRequired;
@@ -74,13 +64,13 @@ public class TaiyoRoom : Room
         if (!l && !r && !u && !d)
             return _roomDatas[Random.Range(0, _roomDatas.Length)].grid;
 
-
         int count = 0;
         while (true)
         {
             count++;
-            if(count > 200)
+            if (count > 200)
             {
+                Debug.Log("CANNOT FIND A SUFFICIENT ROOMDATA");
                 break;
             }
             result = Random.Range(0, _roomDatas.Length);
@@ -112,44 +102,35 @@ public class TaiyoRoom : Room
         if (indexGrid[endPos.x, endPos.y] == 1)
             return false;
 
-        dfsMap = indexGrid;
+        _dfsMap = indexGrid;
 
         recDFS(startPos);
 
-        return (dfsMap[endPos.x,endPos.y] == -1);
+        return (_dfsMap[endPos.x, endPos.y] == -1);
     }
+
 
     private void recDFS(Vector2Int posNow)
     {
         //If we visit, we put -1 in the map
-        dfsMap[posNow.x, posNow.y] = -1;
+        _dfsMap[posNow.x, posNow.y] = -1;
 
         //Visit UP
-        if (posNow.y + 1 < LevelGenerator.ROOM_HEIGHT && dfsMap[posNow.x, posNow.y + 1] != -1 && dfsMap[posNow.x, posNow.y + 1] != 1)
-        {
+        if (posNow.y + 1 < LevelGenerator.ROOM_HEIGHT && _dfsMap[posNow.x, posNow.y + 1] != -1 && _dfsMap[posNow.x, posNow.y + 1] != 1)
             recDFS(new Vector2Int(posNow.x, posNow.y + 1));
-        }
-
         //Visit DOWN
-        if (posNow.y - 1 >= 0 && dfsMap[posNow.x, posNow.y - 1] != -1 && dfsMap[posNow.x, posNow.y - 1] != 1)
-        {
+        if (posNow.y - 1 >= 0 && _dfsMap[posNow.x, posNow.y - 1] != -1 && _dfsMap[posNow.x, posNow.y - 1] != 1)
             recDFS(new Vector2Int(posNow.x, posNow.y - 1));
-        }
 
         //Visit LEFT
-        if (posNow.x - 1 >= 0 && dfsMap[posNow.x-1, posNow.y] != -1 && dfsMap[posNow.x-1, posNow.y] != 1)
-        {
-            recDFS(new Vector2Int(posNow.x-1, posNow.y));
-        }
+        if (posNow.x - 1 >= 0 && _dfsMap[posNow.x - 1, posNow.y] != -1 && _dfsMap[posNow.x - 1, posNow.y] != 1)
+            recDFS(new Vector2Int(posNow.x - 1, posNow.y));
 
         //Visit RIGHT
-        if (posNow.x + 1 < LevelGenerator.ROOM_WIDTH && dfsMap[posNow.x + 1, posNow.y] != -1 && dfsMap[posNow.x + 1, posNow.y] != 1)
-        {
+        if (posNow.x + 1 < LevelGenerator.ROOM_WIDTH && _dfsMap[posNow.x + 1, posNow.y] != -1 && _dfsMap[posNow.x + 1, posNow.y] != 1)
             recDFS(new Vector2Int(posNow.x + 1, posNow.y));
-        }
-        
     }
-    
+
 
 
     public override void fillRoom(LevelGenerator ourGenerator, ExitConstraint requiredExits)
@@ -163,16 +144,8 @@ public class TaiyoRoom : Room
         {
             for (int y = 0; y < LevelGenerator.ROOM_HEIGHT; y++)
             {
-                if(indexGrid[x,y] != 0)
+                if (indexGrid[x, y] != 0)
                     Tile.spawnTile(this.localTilePrefabs[indexGrid[x, y] - 1], transform, x, y);
-                else
-                {
-                    //Randomly spawn an item
-                    if(Random.value < spawnItem)
-                    {
-                        Tile.spawnTile(itemPrefabs[Random.Range(0,itemPrefabs.Length)], transform, x, y);
-                    }
-                }
             }
         }
     }
@@ -207,85 +180,5 @@ public class TaiyoRoom : Room
         return indexGrid;
     }
 
-
-    public int[,] GetRandomRoom()
-    {
-        //Get a random room from the roomFiles
-        string initialGridString = roomFiles[UnityEngine.Random.Range(0, roomFiles.Length)].text;
-        string[] rows = initialGridString.Trim().Split('\n');
-        int width = rows[0].Trim().Split(',').Length;
-        int height = rows.Length;
-
-        if (height != LevelGenerator.ROOM_HEIGHT)
-        {
-            throw new UnityException(string.Format("Error in room by {0}. Wrong height, Expected: {1}, Got: {2}", roomAuthor, LevelGenerator.ROOM_HEIGHT, height));
-        }
-        if (width != LevelGenerator.ROOM_WIDTH)
-        {
-            throw new UnityException(string.Format("Error in room by {0}. Wrong width, Expected: {1}, Got: {2}", roomAuthor, LevelGenerator.ROOM_WIDTH, width));
-        }
-        int[,] indexGrid = new int[width, height];
-        for (int r = 0; r < height; r++)
-        {
-            string row = rows[height - r - 1];
-            string[] cols = row.Trim().Split(',');
-            for (int c = 0; c < width; c++)
-            {
-                indexGrid[c, r] = int.Parse(cols[c]);
-            }
-        }
-        return indexGrid;
-    }
 }
 
-
-
-/*
- bool createWall = true;
-
-                if (x != 0 && x != LevelGenerator.ROOM_WIDTH - 1
-                    && y != 0 && y != LevelGenerator.ROOM_HEIGHT - 1)
-                    createWall = false;
-
-                if (requiredExits.downExitRequired && (x == 4 || x == 5) && y == 0)
-                    createWall = false;
-
-                if (requiredExits.leftExitRequired && (y == 4 || y == 5) && x == 0)
-                    createWall = false;
-
-                if (requiredExits.rightExitRequired && (y == 4 || y == 5) && x == LevelGenerator.ROOM_WIDTH-1)
-                    createWall = false;
-
-                if (requiredExits.upExitRequired && (x == 4 || x == 5) && y == LevelGenerator.ROOM_HEIGHT-1)
-                    createWall = false;
-
-                if (!createWall && indexGrid[x,y] != 0)
-                {
-                    if (UnityEngine.Random.value < spawnItem)
-                    {
-                        //Spawn Item
-                        Tile.spawnTile(this.itemPrefabs[UnityEngine.Random.Range(0, itemPrefabs.Length)], transform, x, y);
-                    }
-                    else
-                    {
-                        //Create tile based off the text file
-                        
-
-                        if (o.GetComponent<BasicAICreature>() != null)
-                            o.GetComponent<BasicAICreature>().init();
-                    }
-                }
-
-                if (dontGenerateLeft && x == 0)
-                    createWall = false;
-                if (dontGenerateRight && x == LevelGenerator.ROOM_WIDTH - 1)
-                    createWall = false;
-                if (dontGenerateUp && y == LevelGenerator.ROOM_HEIGHT - 1)
-                    createWall = false;
-                if (dontGenerateDown && y == 0)
-                    createWall = false;
-
-                if (createWall && UnityEngine.Random.value > wallBroken)
-                    Tile.spawnTile(ourGenerator.normalWallPrefab, transform, x, y);
-
-     */
