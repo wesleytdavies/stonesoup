@@ -6,7 +6,7 @@ using System;
 //the tripmine object gets tripped if the player steps on it and explodes if the player moves before the max ticking time is up
 public class TripMine : Tile {
     protected int _damageDealt = 1;
-    protected float _initalLeewayTime = 0.25f; //how much time the player has to react to stepping on a tripmine before it explodes
+    protected float _initalLeewayTime = 0.5f; //how much time the player has to react to stepping on a tripmine before it explodes
     protected float _maxTickingTime = 3f;
     protected float _explosionRadius = 0.75f;
     [SerializeField] protected AudioClip _trippedSound;

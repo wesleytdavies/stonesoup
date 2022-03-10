@@ -1,25 +1,25 @@
 ﻿<Properties StartupConfiguration="{4AF5F5EC-B76F-DF89-CC9B-315C8814C037}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/AP/Scripts/apt283Gun.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Wesley/Scripts/WesValidatedRoom.cs">
     <Files>
-      <File FileName="Assets/Resources/Wesley/Scripts/Apple.cs" Line="6" Column="56" />
-      <File FileName="Assets/Resources/Wesley/BasicRoom.txt" Line="8" Column="14" />
-      <File FileName="Assets/Scripts/GameObjects/Tile.cs" Line="89" Column="17" />
-      <File FileName="Assets/Resources/Wesley/Scripts/Teleporter.cs" Line="41" Column="1" />
-      <File FileName="Assets/Resources/Wesley/Scripts/TripMine.cs" Line="48" Column="37" />
-      <File FileName="Assets/Scripts/GameObjects/Player.cs" Line="203" Column="5" />
-      <File FileName="Assets/Resources/AP/Scripts/apt283Sword.cs" Line="27" Column="16" />
-      <File FileName="Assets/Resources/AP/Scripts/apt283BetterSword.cs" Line="63" Column="4" />
-      <File FileName="Assets/Scripts/GameStates/GameManager.cs" Line="215" Column="64" />
-      <File FileName="Assets/Resources/AP/Scripts/apt283Bullet.cs" />
-      <File FileName="Assets/Scripts/Util/PollingTileDetector.cs" />
-      <File FileName="Assets/Scripts/GameObjects/Wall.cs" />
-      <File FileName="Assets/Resources/AP/Scripts/apt283AStarEnemy.cs" />
-      <File FileName="Assets/Resources/AP/Scripts/apt283BFSEnemy.cs" Line="162" Column="3" />
-      <File FileName="Assets/Resources/AP/Scripts/apt283FollowEnemy.cs" Line="207" Column="62" />
-      <File FileName="Assets/Scripts/GameObjects/Exit.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/AP/Scripts/apt283Shield.cs" Line="65" Column="1" />
-      <File FileName="Assets/Resources/AP/Scripts/apt283Bat.cs" Line="21" Column="30" />
-      <File FileName="Assets/Resources/AP/Scripts/apt283Gun.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/Wesley/Scripts/WesValidatedRoom.cs" Line="64" Column="44" />
+      <File FileName="Assets/Resources/Wesley/Scripts/WesRoom.cs" Line="234" Column="1" />
+      <File FileName="Assets/Resources/Wesley/Scripts/Teleporter.cs" Line="15" Column="100" />
+      <File FileName="Assets/Resources/Wesley/Scripts/TripMine.cs" />
+      <File FileName="Assets/Scripts/Util/Room.cs" />
+      <File FileName="Assets/Scripts/Util/CameraFollow.cs" />
+      <File FileName="Assets/Scripts/GameObjects/Player.cs" />
+      <File FileName="Assets/Scripts/GameObjects/Tile.cs" Line="107" Column="1" />
+      <File FileName="Assets/Scripts/Util/LevelGenerator.cs" />
+      <File FileName="Assets/Scripts/Util/RandomChoiceRoom.cs" />
+      <File FileName="Assets/Resources/Wesley/Scripts/WesValidatedRoomPicker.cs" Line="24" Column="1" />
+      <File FileName="Assets/Resources/Wesley/Scripts/Bone.cs" Line="9" Column="23" />
+      <File FileName="Assets/Resources/Wesley/Scripts/Dog.cs" Line="15" Column="1" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283Rock.cs" Line="130" Column="1" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283AStarEnemy.cs" Line="28" Column="26" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283BFSEnemy.cs" Line="8" Column="22" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283FollowEnemy.cs" Line="175" Column="45" />
+      <File FileName="Assets/Scripts/GameObjects/BasicAICreature.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Util/PollingTileDetector.cs" Line="27" Column="43" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,12 +28,12 @@
             <Node name="Assets" expanded="True">
               <Node name="Resources" expanded="True">
                 <Node name="AP" expanded="True">
-                  <Node name="Scripts" expanded="True">
-                    <Node name="apt283Gun.cs" selected="True" />
-                  </Node>
+                  <Node name="Scripts" expanded="True" />
                 </Node>
                 <Node name="Wesley" expanded="True">
-                  <Node name="Scripts" expanded="True" />
+                  <Node name="Scripts" expanded="True">
+                    <Node name="WesValidatedRoom.cs" selected="True" />
+                  </Node>
                 </Node>
               </Node>
               <Node name="Scripts" expanded="True">
@@ -49,7 +49,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b9c399cf-293d-4a3a-b4d0-bfed9bb71913" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="96b6ebc8-15f8-43cd-978b-ccae481df7fb" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -27,7 +27,7 @@ public class Teleporter : Tile {
             foreach(RaycastHit2D hit in hits) {
                 if (hit.collider.gameObject.GetComponent<Tile>().hasTag(TileTags.Wall)) {
                     _isTeleporting = true;
-                    tileUsingUs.transform.position = hit.point;
+                    tileUsingUs.transform.position = hit.point; //TODO: player collider will teleport into wall's collider and allow them to walk between walls
                     _isTeleporting = false;
                     return;
                 }
