@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-//the tripmine object gets tripped if the player steps on it and explodes if the player moves before the max ticking time is up
+/// <summary>
+/// The tripmine object gets tripped if the player steps on it and explodes if the player moves before the max ticking time is up.
+/// </summary>
 public class TripMine : Tile {
     protected int _damageDealt = 1;
     protected float _initalLeewayTime = 0.5f; //how much time the player has to react to stepping on a tripmine before it explodes
