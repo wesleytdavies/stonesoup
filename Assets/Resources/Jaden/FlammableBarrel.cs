@@ -7,8 +7,8 @@ public class FlammableBarrel : Tile
 
     //Every videogame needs exploding barrels.
 
-    private int damageDeals = 3;
-    private float explosionRadius = 1f;
+    [SerializeField] int damageDeals = 3;
+    [SerializeField] float explosionRadius = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class FlammableBarrel : Tile
         
     }
 
-	protected override async void die() {
+	protected override void die() {
 
         StopCoroutine(flashWhite());
 
@@ -55,8 +55,6 @@ public class FlammableBarrel : Tile
             }
         }
         
-        //TODO play sfx?
-
 		base.die();
 	}
 }
