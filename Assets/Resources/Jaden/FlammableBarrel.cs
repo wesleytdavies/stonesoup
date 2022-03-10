@@ -8,6 +8,7 @@ public class FlammableBarrel : Tile
     //Every videogame needs exploding barrels.
 
     private int damageDeals = 3;
+    private float explosionRadius = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,17 +43,15 @@ public class FlammableBarrel : Tile
 
         StopCoroutine(flashWhite());
 
-        //deal explosive damage to tiles in a 3x3 radius.
-        TileTags tags = TileTags.Wall + TileTags.CanBeHeld + TileTags.Creature + TileTags.Player +
-                     TileTags.Enemy + TileTags.Friendly + TileTags.Weapon + TileTags.Consumable + 
-                     TileTags.Wearable + TileTags.Money + TileTags.Dateable + TileTags.Dirt + 
-                     TileTags.Plant + TileTags.Flammable + TileTags.Merchant;
+        //deal explosive damage to tiles in a radius.
+        Vector2 pos2D = toGridCoord(globalX, globalY);
 
-        Vector2 pos = new Vector2(Tile.toGridCoord(globalX), Tile.toGridCoord(globalY));
-        
-        for(int i = pos.x - 1; i <= pos.x + 1; i++) {
-            for(int j = pos.y - 1; j <= pos.y + 1; j++) {
-                Tile.tileAtPoint(new Vector2(i, j), tags).takeDamage(this, 3, DamageType.Explosive);
+        Collider[] inRadius = new Collider[15];
+        int numColliders = Physics.OverlapSphereNonAlloc(transform.position, explosionRadius, inRadius);
+        for(int i = 0; i < numColliders; i++) {
+            Tile tile = inRadius[i].GetComponent<Tile>();
+            if(tile != null) {
+                tile.takeDamage(this, 3, DamageType.Explosive);
             }
         }
         
