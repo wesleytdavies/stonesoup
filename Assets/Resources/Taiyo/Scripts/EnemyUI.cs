@@ -17,6 +17,8 @@ public class EnemyUI : MonoBehaviour
 
     private float _timer = 0;
 
+    private int _enemyCount = 0;
+
     void Start()
     {
         this.gameObject.name = "EnemyUI";
@@ -36,7 +38,13 @@ public class EnemyUI : MonoBehaviour
             _enemyTiles.Add(obj.GetComponent<Tile>());
         }
 
+        _enemyCount = 0;
         nonFriendlyValueText.text = o.Length.ToString();
+    }
+
+    public int GetEnemyCount()
+    {
+        return _enemyCount;
     }
 
     // Update is called once per frame
@@ -58,6 +66,7 @@ public class EnemyUI : MonoBehaviour
                         nonFriendCount++;
                 }
             }
+            _enemyCount = friendCount;
             friendlyValueText.text = friendCount.ToString();
             nonFriendlyValueText.text = nonFriendCount.ToString();
         }   
