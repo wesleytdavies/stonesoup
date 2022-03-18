@@ -9,7 +9,11 @@ public class FriendlyDoor : Tile
     private EnemyUI _enemyUI;
 
     public Text valueText;
-    public int doorValue = 2;
+    private int _doorValue = 2;
+
+    public int doorValueMin = 3;
+
+    public int doorValueMax = 15;
 
     private void Start()
     {
@@ -19,8 +23,9 @@ public class FriendlyDoor : Tile
 
     private void SetUp()
     {
+        _doorValue = Random.Range(doorValueMin, doorValueMax);
         _enemyUI = GameObject.Find("EnemyUI").GetComponent<EnemyUI>();
-        valueText.text = doorValue.ToString();
+        valueText.text = _doorValue.ToString();
     }
 
     // Walls only take explosive damage.
@@ -39,7 +44,7 @@ public class FriendlyDoor : Tile
         Debug.Log("‚±‚ç : " + collision.gameObject.tag);
         if(collision.gameObject.name == "player_tile(Clone)")
         {
-            if(doorValue <= _enemyUI.GetEnemyCount())
+            if(_doorValue <= _enemyUI.GetEnemyCount())
             {
                 Destroy(this.gameObject);
             }
