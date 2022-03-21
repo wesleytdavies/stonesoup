@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3888300827473493328}
   - component: {fileID: 4415708438798871971}
+  - component: {fileID: 6760236952386857529}
   m_Layer: 0
-  m_Name: Designed Room 2
+  m_Name: X Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,9 +44,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045692b8f051f4b77888323747bd81a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomAuthor: 
-  designedRoomFile: {fileID: 4900000, guid: dfb59004d68844b07b01758ed37a75b8, type: 3}
+  roomAuthor: Wesley
+  designedRoomFile: {fileID: 4900000, guid: 37bfff479069f4a36aa96709389d896d, type: 3}
   localTilePrefabs: []
   roomGridX: 0
   roomGridY: 0
-  roomChoices: []
+--- !u!114 &6760236952386857529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103526834585248742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b87e708c66462e4e8fda16df2f1defc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Wesley
+  designedRoomFile: {fileID: 4900000, guid: 37bfff479069f4a36aa96709389d896d, type: 3}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0

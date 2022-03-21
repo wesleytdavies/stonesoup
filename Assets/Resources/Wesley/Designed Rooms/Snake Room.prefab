@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3888300827473493328}
   - component: {fileID: 4415708438798871971}
+  - component: {fileID: -1362883064742074388}
   m_Layer: 0
-  m_Name: Designed Room 3
+  m_Name: Snake Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,8 +45,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomAuthor: 
-  designedRoomFile: {fileID: 4900000, guid: d2add3133e8254294adc1b75e8aa0129, type: 3}
+  designedRoomFile: {fileID: 4900000, guid: da246ac7919164adf84dd0d05542b49d, type: 3}
   localTilePrefabs: []
   roomGridX: 0
   roomGridY: 0
-  roomChoices: []
+--- !u!114 &-1362883064742074388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103526834585248742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b87e708c66462e4e8fda16df2f1defc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Wesley
+  designedRoomFile: {fileID: 4900000, guid: da246ac7919164adf84dd0d05542b49d, type: 3}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0
