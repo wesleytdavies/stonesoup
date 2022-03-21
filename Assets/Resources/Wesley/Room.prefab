@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3383080718820017024}
-  - component: {fileID: 2965437080768058869}
+  - component: {fileID: -539036257792110361}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2965437080768058869
+--- !u!114 &-539036257792110361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,13 +40,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8670443526567605692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9fda1be0f47f4d2eb0cd4977c7295a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c6d3a1ff9d7f894dbb82494a938e456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomAuthor: 
-  designedRoomFile: {fileID: 4900000, guid: 3f482074ac45a4b09b883f031952094f, type: 3}
-  localTilePrefabs:
-  - {fileID: 4690229324286977687, guid: 2b0497750e52a4bc495cd4302db167b8, type: 3}
-  - {fileID: 4690229324286977687, guid: 4cb4e497e0b664301b3c73a73f1356b6, type: 3}
+  designedRoomFile: {fileID: 0}
+  localTilePrefabs: []
   roomGridX: 0
   roomGridY: 0
+  RoomChoices:
+  - {fileID: 4415708438798871971, guid: 23b1a0ad9bcb348df8713e1bf0e2e913, type: 3}
+  - {fileID: 4415708438798871971, guid: a619378f2157d4f6798416f2c03eedb9, type: 3}
+  - {fileID: 4415708438798871971, guid: 5f07250500cda4d47a761cd305cb2d8f, type: 3}

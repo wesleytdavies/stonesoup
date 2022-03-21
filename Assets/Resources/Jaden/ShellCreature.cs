@@ -49,6 +49,7 @@ public class ShellCreature : FriendlyEnemy
     }
 
     void ReadyToFriendly() {
+        //TODO sound effect or other feedback? 
         mySprite.sprite = readyToFriendlySprite;
     }
 }
