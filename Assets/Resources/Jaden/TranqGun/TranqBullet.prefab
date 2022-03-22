@@ -57,7 +57,7 @@ MonoBehaviour:
   aimDirection: {x: 0, y: 0}
   damageThreshold: 14
   onGroundThreshold: 1
-  secToTranq: 5
+  secToTranq: 6
 --- !u!212 &8301692432749259010
 SpriteRenderer:
   m_ObjectHideFlags: 0
