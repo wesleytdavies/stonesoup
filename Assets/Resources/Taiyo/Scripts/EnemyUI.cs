@@ -29,6 +29,12 @@ public class EnemyUI : MonoBehaviour
 
     void Start()
     {
+        if (resetScore)
+        {
+            _score = 0;
+            Destroy(this.gameObject);
+            return;
+        }
         this.gameObject.name = "EnemyUI";
         this.transform.parent = GameObject.Find("Canvas").transform;
         this.GetComponent<RectTransform>().anchoredPosition = new Vector2(37, -26);
@@ -36,11 +42,7 @@ public class EnemyUI : MonoBehaviour
         _enemyTiles = new List<Tile>();
         Invoke("SetValue", 0.1f);
 
-        if (resetScore)
-        {
-            _score = 0;
-            Destroy(this.gameObject);
-        }
+
     }
 
     

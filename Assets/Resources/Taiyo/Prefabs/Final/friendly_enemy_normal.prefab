@@ -175,6 +175,9 @@ MonoBehaviour:
   howToUI: {fileID: 424962132122061533}
   friendlyRange: 4.5
   enemyUI: {fileID: 8406415365214589697, guid: c99063427306ebc4e895f1b18e10304e, type: 3}
+  resetCreated: 0
+  friendlyUI: {fileID: 6222148814699590105}
+  activateUI: 0
 --- !u!1 &1097812431973016
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7440473000107123827
 Transform:
   m_ObjectHideFlags: 0
@@ -373,7 +376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1707526982394547643
 Transform:
   m_ObjectHideFlags: 0

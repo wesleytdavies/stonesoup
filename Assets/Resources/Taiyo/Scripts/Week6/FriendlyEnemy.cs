@@ -42,6 +42,9 @@ public class FriendlyEnemy : BasicAICreature
 
     public bool resetCreated = false;
 
+    public GameObject friendlyUI;
+    public bool activateUI = false;
+
     public override void init()
     {
 
@@ -110,6 +113,20 @@ public class FriendlyEnemy : BasicAICreature
         updateSpriteSorting();
 
         CheckIfShouldChange();
+
+        if (!activateUI && Vector3.Distance(_playerTransform.position, this.transform.position) < friendlyRange)
+        {
+            activateUI = true;
+            friendlyUI.SetActive(false);
+            howToUI.SetActive(true);
+        }
+
+        if (activateUI && Vector3.Distance(_playerTransform.position, this.transform.position) > friendlyRange)
+        {
+            activateUI = false;
+            friendlyUI.SetActive(false);
+            howToUI.SetActive(false);
+        }
 
     }
 
