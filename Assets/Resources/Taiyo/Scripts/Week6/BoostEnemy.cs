@@ -32,7 +32,11 @@ public class BoostEnemy : BasicAICreature
 
     private Transform _playerTransform;
 
+    public GameObject friendlyUI;
+
     public GameObject howToUI;
+
+    public bool activateUI = false;
 
     public float friendlyRange = 4;
 
@@ -88,10 +92,26 @@ public class BoostEnemy : BasicAICreature
 
         updateSpriteSorting();
 
+        if(!activateUI && Vector3.Distance(_playerTransform.position, this.transform.position) < friendlyRange)
+        {
+            activateUI = true;
+            friendlyUI.SetActive(false);
+            howToUI.SetActive(true);
+        }
+
+        if (activateUI && Vector3.Distance(_playerTransform.position, this.transform.position) > friendlyRange)
+        {
+            activateUI = false;
+            friendlyUI.SetActive(false);
+            howToUI.SetActive(false);
+        }
+
         if (!isFriendly && Vector3.Distance(_playerTransform.position, this.transform.position) < friendlyRange && Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("FIENDLY!");
             ChangeToFriendly();
+            friendlyUI.SetActive(true);
+            howToUI.SetActive(false);
         }
 
     }
