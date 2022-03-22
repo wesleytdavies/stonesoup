@@ -11,6 +11,8 @@ public class EnemyUI : MonoBehaviour
     public Text friendlyValueText;
     public Text nonFriendlyValueText;
 
+    public Text scoreText;
+
     private List<Tile> _enemyTiles;
 
     public float updateSpan = 1.0f;
@@ -18,6 +20,12 @@ public class EnemyUI : MonoBehaviour
     private float _timer = 0;
 
     private int _enemyCount = 0;
+
+    private int _prevFriendCount = 0;
+
+    static int _score = 0;
+
+    public bool resetScore = false;
 
     void Start()
     {
@@ -27,10 +35,19 @@ public class EnemyUI : MonoBehaviour
         this.transform.localScale = Vector3.one;
         _enemyTiles = new List<Tile>();
         Invoke("SetValue", 0.1f);
+
+        if (resetScore)
+        {
+            _score = 0;
+            Destroy(this.gameObject);
+        }
     }
+
+    
 
     private void SetValue()
     {
+        scoreText.text = _score.ToString() + "p";
         friendlyValueText.text = "0";
         var o = GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject obj in o)
@@ -39,6 +56,7 @@ public class EnemyUI : MonoBehaviour
         }
 
         _enemyCount = 0;
+        _prevFriendCount = 0;
         nonFriendlyValueText.text = o.Length.ToString();
     }
 
@@ -66,6 +84,22 @@ public class EnemyUI : MonoBehaviour
                         nonFriendCount++;
                 }
             }
+
+            if(friendCount > _prevFriendCount)
+            {
+                _score += (friendCount - _prevFriendCount) * 100;
+            }
+
+            if(friendCount < _prevFriendCount)
+            {
+                _score -= (_prevFriendCount - friendCount) * 300;
+            }
+
+            scoreText.text = _score.ToString()+"p";
+
+            _prevFriendCount = friendCount;
+
+
             _enemyCount = friendCount;
             friendlyValueText.text = friendCount.ToString();
             nonFriendlyValueText.text = nonFriendCount.ToString();
