@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class TranqGun : apt283Gun
 {
-
+    
 }

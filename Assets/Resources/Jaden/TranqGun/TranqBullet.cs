@@ -50,4 +50,8 @@ public class TranqBullet : apt283Bullet
         creature.moveAcceleration = origMoveAcceleration;
 
     } 
+
+    //TODO: could override die() to make bullet sprites remain even when inactive 
+    //but, performance 
+    
 }

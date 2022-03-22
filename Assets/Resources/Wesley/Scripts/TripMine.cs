@@ -32,7 +32,7 @@ public class TripMine : Tile {
         AllMines.Add(this);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    public virtual void OnTriggerEnter2D(Collider2D collision) {
         Tile otherTile = collision.gameObject.GetComponent<Tile>();
         if (otherTile == null) {
             return;
