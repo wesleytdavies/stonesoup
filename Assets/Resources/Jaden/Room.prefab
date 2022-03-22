@@ -44,7 +44,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomAuthor: Jaden
-  designedRoomFile: {fileID: 4900000, guid: 260de811ec1d9cc4a867b3b798994885, type: 3}
-  localTilePrefabs: []
+  designedRoomFile: {fileID: 4900000, guid: a6259e12b2eb8f7468355911cd357784, type: 3}
+  localTilePrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 5851486776734115493, guid: df1a5cdc46d551d4bac7a88e96ba7fdf, type: 3}
+  - {fileID: 2393760946036920845, guid: 27429144dfb61534dba906bba1260f46, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   roomGridX: 0
   roomGridY: 0
