@@ -135,7 +135,8 @@ MonoBehaviour:
   tileWereHolding: {fileID: 0}
   aimDirection: {x: 0, y: 0}
   valueText: {fileID: 5705799380194853644}
-  doorValue: 2
+  doorValueMin: 1
+  doorValueMax: 6
 --- !u!1 &1044888156535116905
 GameObject:
   m_ObjectHideFlags: 0

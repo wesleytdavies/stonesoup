@@ -172,7 +172,9 @@ MonoBehaviour:
   isFriendly: 0
   mySprite: {fileID: 212714822871197510}
   friendlySprite: {fileID: 21300000, guid: ef72e05c8e3cb23498d99c400652e928, type: 3}
+  friendlyUI: {fileID: 4592149872148347330}
   howToUI: {fileID: 424962132122061533}
+  activateUI: 0
   friendlyRange: 4.5
 --- !u!1 &1097812431973016
 GameObject:
@@ -290,7 +292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7440473000107123827
 Transform:
   m_ObjectHideFlags: 0
@@ -372,7 +374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4746805815269888201
 Transform:
   m_ObjectHideFlags: 0

@@ -40,6 +40,11 @@ public class FriendlyEnemy : BasicAICreature
 
     static bool createdUI = false;
 
+    public bool resetCreated = false;
+
+    public GameObject friendlyUI;
+    public bool activateUI = false;
+
     public override void init()
     {
 
@@ -59,6 +64,7 @@ public class FriendlyEnemy : BasicAICreature
         _playerTransform = GameObject.Find("player_tile(Clone)").transform;
     }
 
+
     public void ChangeToFriendly()
     {
         mySprite.sprite = friendlySprite;
@@ -71,6 +77,14 @@ public class FriendlyEnemy : BasicAICreature
 
     public override void Start()
     {
+        if (resetCreated)
+        {
+            createdUI = false;
+            Destroy(this.gameObject);
+            Debug.Log("Reset created");
+            return;
+        }
+
         _targetGridPos = Tile.toGridCoord(globalX, globalY);
         _nextMoveCounter = Random.Range(timeBetweenMovesMin, timeBetweenMovesMax);
         this.gameObject.name = "FriendlyEnemy";
@@ -99,6 +113,20 @@ public class FriendlyEnemy : BasicAICreature
         updateSpriteSorting();
 
         CheckIfShouldChange();
+
+        if (!activateUI && Vector3.Distance(_playerTransform.position, this.transform.position) < friendlyRange)
+        {
+            activateUI = true;
+            friendlyUI.SetActive(false);
+            howToUI.SetActive(true);
+        }
+
+        if (activateUI && Vector3.Distance(_playerTransform.position, this.transform.position) > friendlyRange)
+        {
+            activateUI = false;
+            friendlyUI.SetActive(false);
+            howToUI.SetActive(false);
+        }
 
     }
 
