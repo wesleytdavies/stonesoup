@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 595729468952079762}
   - component: {fileID: 7584967333627361226}
   - component: {fileID: 4412447258398758791}
+  - component: {fileID: 3864452670360172263}
   m_Layer: 0
   m_Name: ShellCreature
   m_TagString: Untagged
@@ -68,6 +69,9 @@ MonoBehaviour:
   howToUI: {fileID: 0}
   friendlyRange: 4
   enemyUI: {fileID: 0}
+  resetCreated: 0
+  friendlyUI: {fileID: 0}
+  activateUI: 0
   friendlyHealthThreshold: 1
   readyToFriendlySprite: {fileID: 3308128073108545313, guid: e109ff8da2dc256409a7f1743f992d8a,
     type: 3}
@@ -123,3 +127,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &3864452670360172263
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2393760946036920845}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0266666, y: 1.27}
+    newSize: {x: 1.0266666, y: 1.27}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0266666, y: 1.27}
+  m_EdgeRadius: 0

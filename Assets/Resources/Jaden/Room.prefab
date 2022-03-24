@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomAuthor: Jaden
-  designedRoomFile: {fileID: 0}
+  designedRoomFile: {fileID: 4900000, guid: 260de811ec1d9cc4a867b3b798994885, type: 3}
   localTilePrefabs:
   - {fileID: 1249101369981090, guid: ad909242602e14ab893ee3381803cc01, type: 3}
   - {fileID: 1113547423427548, guid: 15584a55359f544b8aed48a2de6be57a, type: 3}
@@ -72,13 +72,13 @@ MonoBehaviour:
   roomGridX: 0
   roomGridY: 0
   roomFiles:
-  - {fileID: 4900000, guid: a6398a5a6368f4a629e9bc7551c19ac2, type: 3}
-  - {fileID: 4900000, guid: dfb59004d68844b07b01758ed37a75b8, type: 3}
-  - {fileID: 4900000, guid: d7ec49715f1ac1a4380901400890540b, type: 3}
-  - {fileID: 4900000, guid: e466851c59904d948ba5b8437bbd8a1d, type: 3}
-  - {fileID: 4900000, guid: d9dac31ce9617234ea79031d604c3514, type: 3}
-  - {fileID: 4900000, guid: 073a2854d5368194b9b3e1e87af3bdab, type: 3}
-  - {fileID: 4900000, guid: 9501ab8dd538239419be599c13d88086, type: 3}
+  - {fileID: 4900000, guid: 8e0d936f01102934bb30e1e5630f678e, type: 3}
+  - {fileID: 4900000, guid: 9e80628f16828ea498f2b5ea394168a9, type: 3}
+  - {fileID: 4900000, guid: e0cde2e518a6dd848859c0dffea8fbfe, type: 3}
+  - {fileID: 4900000, guid: 5c4d42045293660489cdd47a2b2f6b99, type: 3}
+  - {fileID: 4900000, guid: 43c9238e5c88d64498df066c7e54960e, type: 3}
+  - {fileID: 4900000, guid: c0c33489d2bbae448a8c23d6a4c258d8, type: 3}
+  - {fileID: 4900000, guid: 39231f466b728d94aae3a4daffedfd6b, type: 3}
   spawnItem: 0.01
   itemPrefabs:
   - {fileID: 97679449016463917, guid: 1c2999a4497441348b5075be61f73adf, type: 3}
