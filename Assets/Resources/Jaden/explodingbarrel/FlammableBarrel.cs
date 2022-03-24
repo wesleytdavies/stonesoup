@@ -8,7 +8,7 @@ public class FlammableBarrel : Tile
     //Every videogame needs exploding barrels.
 
     [SerializeField] int damageDeals = 2;
-    [SerializeField] float explosionRadius = 1f;
+    [SerializeField] float explosionRadius = 1.5f;
 
     // Start is called before the first frame update
     void Start()
