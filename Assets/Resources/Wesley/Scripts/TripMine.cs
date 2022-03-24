@@ -19,14 +19,14 @@ public class TripMine : Tile {
     [SerializeField] protected AudioClip _explosionSound;
     [SerializeField] protected AudioClip _deactivateSound;
     public new SpriteRenderer renderer;
-    //protected Animator _animator;
+    protected Animator _animator;
     protected TextMeshProUGUI _freezeText;
 
     public override void init() {
         base.init();
         renderer = GetComponent<SpriteRenderer>();
-        //_animator = GetComponent<Animator>();
-        //_animator.speed = 0f;
+        _animator = GetComponent<Animator>();
+        _animator.speed = 0f;
         _freezeText = GetComponentInChildren<TextMeshProUGUI>();
         renderer.enabled = false;
         AllMines.Add(this);
@@ -37,7 +37,7 @@ public class TripMine : Tile {
         if (otherTile == null) {
             return;
         }
-        if (otherTile.hasTag(TileTags.Player)) {
+        if (otherTile.hasTag(TileTags.Player) || otherTile.hasTag(TileTags.Enemy)) {
             StartCoroutine(Tripped(otherTile));
         }
     }
