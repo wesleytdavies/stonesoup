@@ -75,7 +75,7 @@ public class TripMine : Tile {
     protected IEnumerator Explode(Collider2D[] collidersToExplode)
     {
         renderer.enabled = true;
-        //_animator.speed = 1f;
+        _animator.speed = 1f;
         deathSFX = _explosionSound;
         yield return new WaitForSeconds(0.2f);
         foreach (Collider2D collider in collidersToExplode)
