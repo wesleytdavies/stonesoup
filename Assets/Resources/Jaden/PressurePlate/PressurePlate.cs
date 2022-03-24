@@ -21,7 +21,10 @@ public class PressurePlate : TripMine
         }
         renderer.sprite = pressedSprite;
         //if (otherTile.hasTag(TileTags.Player)) {
+        if(otherTile.GetComponent<Rigidbody2D>() != null) {
             StartCoroutine(Tripped(otherTile));
+        }
+            
         //}
     }
 
