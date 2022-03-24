@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5851486776734115493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags: 32770
   tileName: Barrel
-  health: 3
+  health: 2
   deathEffect: {fileID: 1581785524438676, guid: b55624526117b4928b6338cb05f43f68,
     type: 3}
   deathSFX: {fileID: 0}
@@ -55,8 +55,8 @@ MonoBehaviour:
   heldAngle: 0
   tileWereHolding: {fileID: 0}
   aimDirection: {x: 0, y: 0}
-  damageDeals: 3
-  explosionRadius: 1
+  damageDeals: 2
+  explosionRadius: 2
 --- !u!212 &110439241886892331
 SpriteRenderer:
   m_ObjectHideFlags: 0
