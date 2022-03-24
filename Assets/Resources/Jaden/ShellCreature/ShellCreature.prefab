@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17154143f48b3dc4385e0897389c8035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags: 0
+  tags: 20
   tileName: ShellCreature
   health: 5
   deathEffect: {fileID: 0}
