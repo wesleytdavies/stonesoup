@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{4AF5F5EC-B76F-DF89-CC9B-315C8814C037}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Wesley/Scripts/WesValidatedRoom.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Wesley/Scripts/Dog.cs">
     <Files>
       <File FileName="Assets/Resources/Wesley/Scripts/WesValidatedRoomPicker.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Wesley/Scripts/Dog.cs" Line="55" Column="1" />
+      <File FileName="Assets/Resources/Wesley/Scripts/Dog.cs" Line="57" Column="6" />
       <File FileName="Assets/Resources/Wesley/Scripts/WesValidatedRoom.cs" Line="34" Column="45" />
       <File FileName="Assets/Resources/Wesley/Scripts/TripMine.cs" />
       <File FileName="Assets/Resources/Wesley/Scripts/MineSweeper.cs" />
@@ -18,14 +18,14 @@
       <File FileName="Assets/Scripts/GameObjects/BasicAICreature.cs" />
       <File FileName="Assets/Scripts/Util/PollingTileDetector.cs" />
       <File FileName="Assets/Resources/AP/Scripts/apt283AStarEnemy.cs" />
-      <File FileName="Assets/Resources/Taiyo/Scripts/TaiyoValidatorRoomPicker.cs" Line="30" Column="1" />
-      <File FileName="Assets/Resources/Taiyo/Scripts/TaiyoValidatorRoom.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/Taiyo/Scripts/TaiyoValidatorRoomPicker.cs" />
+      <File FileName="Assets/Resources/Taiyo/Scripts/TaiyoValidatorRoom.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StoneSoup" expanded="True">
-            <Node name="Assets" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
               <Node name="Resources" expanded="True">
                 <Node name="AP" expanded="True">
                   <Node name="Scripts" expanded="True" />
@@ -34,9 +34,7 @@
                   <Node name="Scripts" expanded="True" />
                 </Node>
                 <Node name="Wesley" expanded="True">
-                  <Node name="Scripts" expanded="True">
-                    <Node name="WesValidatedRoom.cs" selected="True" />
-                  </Node>
+                  <Node name="Scripts" expanded="True" />
                 </Node>
               </Node>
               <Node name="Scripts" expanded="True">
@@ -52,7 +50,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="875977a4-3a65-4a46-9eb5-95e8e26246ce" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="13c0ae74-fb00-444d-b2bd-6d8925414e2e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

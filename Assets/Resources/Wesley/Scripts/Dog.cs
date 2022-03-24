@@ -18,6 +18,14 @@ public class Dog : Tile
     {
         _body = GetComponent<Rigidbody2D>();
         AudioManager.playAudio(_dogBark);
+        if (tileThatThrewUs.hasTag(TileTags.Player))
+        {
+            _attackTag = TileTags.Enemy;
+        }
+        else
+        {
+            _attackTag = TileTags.Player;
+        }
     }
 
     private void Update()
@@ -32,7 +40,7 @@ public class Dog : Tile
             return;
         }
         Tile collidedTile = collision.gameObject.GetComponent<Tile>();
-        if (collidedTile.hasTag(TileTags.Enemy))
+        if (collidedTile.hasTag(_attackTag))
         {
             //damage the tile we collided with
             collidedTile.takeDamage(this, 1);
