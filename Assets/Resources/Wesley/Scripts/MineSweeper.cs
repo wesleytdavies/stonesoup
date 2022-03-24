@@ -32,4 +32,18 @@ public class MineSweeper : Tile
             mine.renderer.enabled = false;
         }
     }
+
+    protected override void die()
+    {
+        //hide mines if sweeper gets destroyed
+        foreach (TripMine mine in TripMine.AllMines)
+        {
+            if (mine == null)
+            {
+                continue;
+            }
+            mine.renderer.enabled = false;
+        }
+        base.die();
+    }
 }
