@@ -136,6 +136,8 @@ MonoBehaviour:
   _trippedSound: {fileID: 8300000, guid: fa7c61c654307444599178d7e3c1b5bd, type: 3}
   _explosionSound: {fileID: 8300000, guid: 29254cc2a127349dba04058bfe1fa833, type: 3}
   _deactivateSound: {fileID: 8300000, guid: df4b5718be0b44cb6ab736b4ff6ee4da, type: 3}
+  renderer: {fileID: 0}
+  _freezeText: {fileID: 3927403007237917667}
 --- !u!95 &46032110248308912
 Animator:
   serializedVersion: 3

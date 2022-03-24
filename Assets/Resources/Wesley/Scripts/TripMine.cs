@@ -20,14 +20,14 @@ public class TripMine : Tile {
     [SerializeField] protected AudioClip _deactivateSound;
     public new SpriteRenderer renderer;
     protected Animator _animator;
-    protected TextMeshProUGUI _freezeText;
+    public TextMeshProUGUI _freezeText;
 
     public override void init() {
         base.init();
         renderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _animator.speed = 0f;
-        _freezeText = GetComponentInChildren<TextMeshProUGUI>();
+        //_freezeText = GetComponentInChildren<TextMeshProUGUI>();
         renderer.enabled = false;
         AllMines.Add(this);
     }
@@ -45,7 +45,8 @@ public class TripMine : Tile {
     protected virtual IEnumerator Tripped(Tile tripperTile) {
         AudioManager.playAudio(_trippedSound);
         Debug.Log("Tripped");
-        _freezeText.text = "Freeze!";
+        if(_freezeText != null)
+            _freezeText.text = "Freeze!";
         yield return new WaitForSeconds(_initalLeewayTime);
         //check if player has already teleported away during the leeway period and die and break if they have
         if(Vector2.Distance(tripperTile.transform.position, transform.position) > TILE_SIZE * 2f) {
