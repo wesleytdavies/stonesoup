@@ -90,9 +90,10 @@ public class FriendlyEnemy : BasicAICreature
         _nextMoveCounter = Random.Range(timeBetweenMovesMin, timeBetweenMovesMax);
         this.gameObject.name = "FriendlyEnemy";
         //Create an UI if an UI does not exist
-        if (!createdUI)
+        if (enemyUI != null && !createdUI)
         {
             createdUI = true;
+
             Instantiate(enemyUI, Vector3.zero, Quaternion.identity);
         }
     }
