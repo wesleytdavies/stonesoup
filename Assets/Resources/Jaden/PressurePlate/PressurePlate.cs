@@ -8,6 +8,10 @@ public class PressurePlate : TripMine
     //so can be used as puzzle elements, unlike trip mines 
     [SerializeField] Sprite pressedSprite;
 
+    void Update() {
+        renderer.enabled = true;
+    }
+
     //pressure plates can be tripped by enemies as well as players 
     //can be tripped by anything honestly.
     public override void OnTriggerEnter2D(Collider2D collision) {
