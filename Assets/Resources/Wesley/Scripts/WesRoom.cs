@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// I struggled with creating good room generation so I just used CA; I'll definitely keep working on this.
+/// I struggled with creating good room generation so I just used CA.
 /// </summary>
 public class WesRoom : Room
 {

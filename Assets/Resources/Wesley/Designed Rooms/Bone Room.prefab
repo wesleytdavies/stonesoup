@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3888300827473493328}
   - component: {fileID: 4415708438798871971}
   m_Layer: 0
-  m_Name: Designed Room 6
+  m_Name: Bone Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,9 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045692b8f051f4b77888323747bd81a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomAuthor: 
-  designedRoomFile: {fileID: 4900000, guid: 07b2810049a5e4c8390fbac59b81889c, type: 3}
-  localTilePrefabs: []
+  roomAuthor: Wesley
+  designedRoomFile: {fileID: 4900000, guid: 725373eba1e56477b9418a646d0023b1, type: 3}
+  localTilePrefabs:
+  - {fileID: 4690229324286977687, guid: 4cb4e497e0b664301b3c73a73f1356b6, type: 3}
+  - {fileID: 1097009321995878, guid: 7f119146519d742d7953341b07580643, type: 3}
+  - {fileID: 5948050063599754122, guid: f8cedd4ec374a4062881ca7166a2ae09, type: 3}
   roomGridX: 0
   roomGridY: 0
-  roomChoices: []
