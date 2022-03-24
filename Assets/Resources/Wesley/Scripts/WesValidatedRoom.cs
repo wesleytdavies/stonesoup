@@ -27,6 +27,8 @@ public class WesValidatedRoom : Room
     private bool _hasDownRightPath;
     private bool _hasLeftRightPath;
 
+    private float _chanceToSpawnMine = 0.01f;
+
     private bool DoesListContainPoint(List<SearchVertex> list, Vector2Int point)
     {
         foreach(SearchVertex searchVertex in list)
@@ -59,15 +61,15 @@ public class WesValidatedRoom : Room
         _hasDownRightPath = DoesPathExist(indexGrid, downExit, rightExit);
         _hasLeftRightPath = DoesPathExist(indexGrid, leftExit, rightExit);
 
-        if (_hasUpLeftPath)
-        {
-            Debug.Log("Has up-left path.");
-            List<Vector2Int> path = GetPathDfs(indexGrid, upExit, leftExit);
-            foreach(Vector2Int point in path)
-            {
-                Debug.Log("Point: " + point.x + ", " + point.y);
-            }
-        }
+        //if (_hasUpLeftPath)
+        //{
+        //    Debug.Log("Has up-left path.");
+        //    List<Vector2Int> path = GetPathDfs(indexGrid, upExit, leftExit);
+        //    foreach(Vector2Int point in path)
+        //    {
+        //        Debug.Log("Point: " + point.x + ", " + point.y);
+        //    }
+        //}
     }
 
     public bool MeetsConstrants(ExitConstraint requiredExits)
@@ -242,11 +244,11 @@ public class WesValidatedRoom : Room
         {
             return false;
         }
-        if(indexGrid[point.x, point.y] == 1)
+        if(indexGrid[point.x, point.y] == 0)
         {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     private bool IsPointInGrid(Vector2Int point)
@@ -260,6 +262,64 @@ public class WesValidatedRoom : Room
             return false;
         }
         return true;
+    }
+
+    //override to allow for spawning mines
+    public override void fillRoom(LevelGenerator ourGenerator, ExitConstraint requiredExits)
+    {
+        string initialGridString = designedRoomFile.text;
+        string[] rows = initialGridString.Trim().Split('\n');
+        int width = rows[0].Trim().Split(',').Length;
+        int height = rows.Length;
+        if (height != LevelGenerator.ROOM_HEIGHT)
+        {
+            throw new UnityException(string.Format("Error in room by {0}. Wrong height, Expected: {1}, Got: {2}", roomAuthor, LevelGenerator.ROOM_HEIGHT, height));
+        }
+        if (width != LevelGenerator.ROOM_WIDTH)
+        {
+            throw new UnityException(string.Format("Error in room by {0}. Wrong width, Expected: {1}, Got: {2}", roomAuthor, LevelGenerator.ROOM_WIDTH, width));
+        }
+        int[,] indexGrid = new int[width, height];
+        for (int r = 0; r < height; r++)
+        {
+            string row = rows[height - r - 1];
+            string[] cols = row.Trim().Split(',');
+            for (int c = 0; c < width; c++)
+            {
+                indexGrid[c, r] = int.Parse(cols[c]);
+            }
+        }
+
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                int tileIndex = indexGrid[i, j];
+                if (tileIndex == 0)
+                {
+                    //the only difference: try to spawn a mine
+                    if (Random.Range(0f, 1f) <= _chanceToSpawnMine)
+                    {
+                        if (localTilePrefabs?.Length > 0)
+                        {
+                            Debug.Log("Mine spawned.");
+                            Tile.spawnTile(localTilePrefabs[0], transform, i, j);
+                        }
+                    }
+                    continue; // 0 is nothing.
+                }
+                GameObject tileToSpawn;
+                if (tileIndex < LevelGenerator.LOCAL_START_INDEX)
+                {
+                    tileToSpawn = ourGenerator.globalTilePrefabs[tileIndex - 1];
+                }
+                else
+                {
+                    tileToSpawn = localTilePrefabs[tileIndex - LevelGenerator.LOCAL_START_INDEX];
+                }
+                Tile.spawnTile(tileToSpawn, transform, i, j);
+            }
+        }
     }
 
     public int[,] loadIndexGrid()

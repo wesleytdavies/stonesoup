@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3888300827473493328}
   - component: {fileID: 4415708438798871971}
-  - component: {fileID: -6501707109357928501}
   m_Layer: 0
   m_Name: Walled Treasure Room
   m_TagString: Untagged
@@ -44,25 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045692b8f051f4b77888323747bd81a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomAuthor: 
+  roomAuthor: Wesley
   designedRoomFile: {fileID: 4900000, guid: 0fceb548c2fe14b2595db392ef2f2126, type: 3}
-  localTilePrefabs: []
-  roomGridX: 0
-  roomGridY: 0
---- !u!114 &-6501707109357928501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103526834585248742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b87e708c66462e4e8fda16df2f1defc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomAuthor: 
-  designedRoomFile: {fileID: 4900000, guid: 0fceb548c2fe14b2595db392ef2f2126, type: 3}
-  localTilePrefabs: []
+  localTilePrefabs:
+  - {fileID: 4690229324286977687, guid: 4cb4e497e0b664301b3c73a73f1356b6, type: 3}
+  - {fileID: 4690229324286977687, guid: 2b0497750e52a4bc495cd4302db167b8, type: 3}
+  - {fileID: 5948050063599754122, guid: f8cedd4ec374a4062881ca7166a2ae09, type: 3}
   roomGridX: 0
   roomGridY: 0
