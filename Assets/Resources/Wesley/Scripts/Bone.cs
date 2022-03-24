@@ -124,7 +124,7 @@ public class Bone : Tile
             {
                 _thisDog = Instantiate(dogPrefab, _tileThatThrewUs.transform.position, Quaternion.identity);
                 _thisDog.tileWereChasing = this;
-				_thisDog.tileThatThrewUs = this;
+				_thisDog.tileThatThrewUs = _tileThatThrewUs;
             }
         }
 	}
