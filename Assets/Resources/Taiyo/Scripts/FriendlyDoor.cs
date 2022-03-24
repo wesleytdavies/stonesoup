@@ -15,6 +15,9 @@ public class FriendlyDoor : Tile
 
     public int doorValueMax = 15;
 
+    public AudioClip openSe;
+
+    private bool _entered = false;
     private void Start()
     {
         Invoke("SetUp", 0.5f);
@@ -41,13 +44,21 @@ public class FriendlyDoor : Tile
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("‚±‚ç : " + collision.gameObject.tag);
+        if (_entered)
+            return;
         if(collision.gameObject.name == "player_tile(Clone)")
         {
             if(_doorValue <= _enemyUI.GetEnemyCount())
             {
-                Destroy(this.gameObject);
+                _entered = false;
+                this.GetComponent<AudioSource>().PlayOneShot(openSe);
+                Invoke("DestroySelf", 0.7f);
             }
         }
+    }
+    private void DestroySelf()
+    {
+        Destroy(this.gameObject);
+
     }
 }

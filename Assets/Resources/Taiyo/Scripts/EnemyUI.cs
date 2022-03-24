@@ -27,6 +27,10 @@ public class EnemyUI : MonoBehaviour
 
     public bool resetScore = false;
 
+    public AudioClip friendSE;
+    public AudioClip nonFriendSE;
+
+    private AudioSource _audioSource;
     void Start()
     {
         if (resetScore)
@@ -35,6 +39,7 @@ public class EnemyUI : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+        _audioSource = this.GetComponent<AudioSource>();
         this.gameObject.name = "EnemyUI";
         this.transform.parent = GameObject.Find("Canvas").transform;
         this.GetComponent<RectTransform>().anchoredPosition = new Vector2(37, -26);
@@ -87,14 +92,20 @@ public class EnemyUI : MonoBehaviour
                 }
             }
 
+            bool f = false;
+
             if(friendCount > _prevFriendCount)
             {
+                f = true;
                 _score += (friendCount - _prevFriendCount) * 100;
+                _audioSource.PlayOneShot(friendSE);
             }
 
             if(friendCount < _prevFriendCount)
             {
                 _score -= (_prevFriendCount - friendCount) * 300;
+                if(!f)
+                    _audioSource.PlayOneShot(nonFriendSE);
             }
 
             scoreText.text = _score.ToString()+"p";

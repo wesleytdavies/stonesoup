@@ -11,6 +11,7 @@ public class PowerShieldTaiyo : Tile
     public Sprite heldSprite;
     public Sprite onGroundSprite;
 
+    public AudioClip holdSE;
 
     private float _duration = 10;
 
@@ -33,6 +34,7 @@ public class PowerShieldTaiyo : Tile
         base.pickUp(tilePickingUsUp);
         if (_tileHoldingUs == tilePickingUsUp)
         {
+            this.GetComponent<AudioSource>().PlayOneShot(holdSE);
             transform.parent = null; // To make joints work, we have to do this. 
             _sprite.sprite = heldSprite;
             onGroundCollider.enabled = false;

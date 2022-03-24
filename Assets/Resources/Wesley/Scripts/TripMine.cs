@@ -19,14 +19,14 @@ public class TripMine : Tile {
     [SerializeField] protected AudioClip _explosionSound;
     [SerializeField] protected AudioClip _deactivateSound;
     public new SpriteRenderer renderer;
-    protected Animator _animator;
+    //protected Animator _animator;
     protected TextMeshProUGUI _freezeText;
 
     public override void init() {
         base.init();
         renderer = GetComponent<SpriteRenderer>();
-        _animator = GetComponent<Animator>();
-        _animator.speed = 0f;
+        //_animator = GetComponent<Animator>();
+        //_animator.speed = 0f;
         _freezeText = GetComponentInChildren<TextMeshProUGUI>();
         renderer.enabled = false;
         AllMines.Add(this);
@@ -75,11 +75,13 @@ public class TripMine : Tile {
     protected IEnumerator Explode(Collider2D[] collidersToExplode)
     {
         renderer.enabled = true;
-        _animator.speed = 1f;
+        //_animator.speed = 1f;
         deathSFX = _explosionSound;
         yield return new WaitForSeconds(0.2f);
         foreach (Collider2D collider in collidersToExplode)
         {
+            if (collider == null)
+                continue;
             Tile otherTile = collider.gameObject.GetComponent<Tile>();
             if (otherTile != null)
             {

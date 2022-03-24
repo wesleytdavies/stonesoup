@@ -35,6 +35,7 @@ public class CuteHammer : Tile
 
 	private void OnTriggerStay2D(Collider2D other)
 	{
+
 		if (other.GetComponent<Tile>() != null && (other.GetComponent<Tile>().tags & TileTags.Wall) != 0 && _activated)
 		{
 			other.GetComponent<Tile>().takeDamage(this, 10, DamageType.Explosive);
