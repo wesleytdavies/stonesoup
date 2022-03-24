@@ -12,7 +12,7 @@ public class TripMine : Tile {
 
     protected int _damageDealt = 1;
     protected float _initalLeewayTime = 0.3f; //how much time the player has to react to stepping on a tripmine before it explodes
-    protected float _maxTickingTime = 3f;
+    protected float _maxTickingTime = 2f;
     protected float _explosionRadius = 0.75f;
 
     [SerializeField] protected AudioClip _trippedSound;

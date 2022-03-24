@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WesValidatedRoomPicker : Room
 {
-    public Room[] roomChoices;
+	public Room[] roomChoices;
 
     public override Room createRoom(ExitConstraint requiredExits)
     {
