@@ -219,8 +219,6 @@ public class WesValidatedRoom : Room
                 if (IsPointNavigable(indexGrid, leftNeighbor))
                 {
                     SearchVertex leftNeighborVertex = new SearchVertex(leftNeighbor, currentVertex);
-                    leftNeighborVertex.point = leftNeighbor;
-                    leftNeighborVertex.parent = currentVertex;
                     openSet.Add(leftNeighborVertex);
                 }
             }

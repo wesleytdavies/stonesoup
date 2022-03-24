@@ -114,7 +114,6 @@ public class Bone : Tile
 	{
 		if (_isInAir && collision.gameObject.GetComponent<Tile>() != null)
 		{
-			Tile otherTile = collision.gameObject.GetComponent<Tile>();
             if (_thisDog == null)
             {
                 _thisDog = Instantiate(dogPrefab, _tileThatThrewUs.transform.position, Quaternion.identity);

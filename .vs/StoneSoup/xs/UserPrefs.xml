@@ -1,23 +1,23 @@
 ﻿<Properties StartupConfiguration="{4AF5F5EC-B76F-DF89-CC9B-315C8814C037}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Taiyo/Scripts/TaiyoValidatorRoomPicker.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Wesley/Scripts/Dog.cs">
     <Files>
-      <File FileName="Assets/Resources/Wesley/Scripts/WesValidatedRoom.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Wesley/Scripts/TripMine.cs" />
+      <File FileName="Assets/Resources/Wesley/Scripts/Dog.cs" Line="55" Column="1" />
+      <File FileName="Assets/Resources/Wesley/Scripts/WesValidatedRoom.cs" Line="7" Column="12" />
+      <File FileName="Assets/Resources/Wesley/Scripts/TripMine.cs" Line="52" Column="19" />
       <File FileName="Assets/Resources/Wesley/Scripts/MineSweeper.cs" />
       <File FileName="Assets/Resources/Wesley/Scripts/WesRoom.cs" />
-      <File FileName="Assets/Resources/Wesley/Scripts/Teleporter.cs" />
+      <File FileName="Assets/Resources/Wesley/Scripts/Teleporter.cs" Line="22" Column="13" />
       <File FileName="Assets/Scripts/Util/Room.cs" />
       <File FileName="Assets/Scripts/Util/CameraFollow.cs" />
       <File FileName="Assets/Scripts/GameObjects/Player.cs" />
-      <File FileName="Assets/Scripts/GameObjects/Tile.cs" />
+      <File FileName="Assets/Scripts/GameObjects/Tile.cs" Line="116" Column="24" />
       <File FileName="Assets/Scripts/Util/LevelGenerator.cs" />
       <File FileName="Assets/Scripts/Util/RandomChoiceRoom.cs" />
-      <File FileName="Assets/Resources/Wesley/Scripts/WesValidatedRoomPicker.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Wesley/Scripts/Bone.cs" />
-      <File FileName="Assets/Resources/Wesley/Scripts/Dog.cs" />
+      <File FileName="Assets/Resources/Wesley/Scripts/WesValidatedRoomPicker.cs" Line="24" Column="1" />
+      <File FileName="Assets/Resources/Wesley/Scripts/Bone.cs" Line="125" Column="1" />
       <File FileName="Assets/Scripts/GameObjects/BasicAICreature.cs" />
       <File FileName="Assets/Scripts/Util/PollingTileDetector.cs" />
-      <File FileName="Assets/Resources/Taiyo/Scripts/TaiyoValidatorRoomPicker.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283AStarEnemy.cs" Line="34" Column="50" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,13 +28,10 @@
                 <Node name="AP" expanded="True">
                   <Node name="Scripts" expanded="True" />
                 </Node>
-                <Node name="Taiyo" expanded="True">
-                  <Node name="Scripts" expanded="True">
-                    <Node name="TaiyoValidatorRoomPicker.cs" selected="True" />
-                  </Node>
-                </Node>
                 <Node name="Wesley" expanded="True">
-                  <Node name="Scripts" expanded="True" />
+                  <Node name="Scripts" expanded="True">
+                    <Node name="Dog.cs" selected="True" />
+                  </Node>
                 </Node>
               </Node>
               <Node name="Scripts" expanded="True">
@@ -50,7 +47,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6412fa25-b7fb-4df2-9237-a9bd5fd9f6b6" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="47c4459c-71cc-4f56-a498-c339e054d6dd" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

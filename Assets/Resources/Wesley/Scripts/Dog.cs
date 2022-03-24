@@ -1,157 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 /// <summary>
 /// The dog is supposed to chase the bone and damage any enemies in its path. I haven't gotten it to work quite yet!
 /// </summary>
-public class Dog : apt283BFSEnemy
+public class Dog : Tile
 {
-	protected override void updatePathToTarget()
-	{
+    public Tile tileWereChasing;
 
-		_currentPath.Clear();
+    private void Start()
+    {
+        //StartCoroutine(MoveToTarget(tileWereChasing));
+        _body = GetComponent<Rigidbody2D>();
+    }
 
-		_agenda.Clear();
-		_closedSet.Clear();
+    private void Update()
+    {
+        _body.position = Vector2.MoveTowards(transform.position, tileWereChasing.transform.position, 0.1f);
+    }
 
-		SearchVertex startVertex = new SearchVertex();
-		startVertex.parent = null;
-		startVertex.numHops = 0;
-		startVertex.gridPos = _targetGridPos;
-		startVertex.costFromStart = 0;
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.gameObject.GetComponent<Tile>())
+        {
+            return;
+        }
+        Tile collidedTile = collision.gameObject.GetComponent<Tile>();
+        if (collidedTile.hasTag(TileTags.Enemy))
+        {
+            //damage the tile we collided with
+            collidedTile.takeDamage(this, 1);
+        }
+    }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject != tileWereChasing.gameObject)
+        {
+            return;
+        }
+        die();
+    }
 
-		Vector2 targetPos = toGridCoord(_tileWereChasing.transform.position);
-
-		startVertex.estimatedCostToTarget = estimatePathDistance(startVertex.gridPos, targetPos);
-
-		_agenda.Add(startVertex);
-
-		// We have a max hops so that we don't spend too long searching in vain. 
-		int maxHops = maxSearchDepth;
-
-		while (_agenda.Count > 0)
-		{
-			float minCost = _agenda[0].estimatedCostToTarget;
-			SearchVertex currentVertex = _agenda[0];
-			foreach (SearchVertex vertex in _agenda)
-			{
-				if (vertex.estimatedCostToTarget < minCost)
-				{
-					minCost = vertex.estimatedCostToTarget;
-					currentVertex = vertex;
-				}
-			}
-			_agenda.Remove(currentVertex);
-			_closedSet.Add(currentVertex);
-
-			if (currentVertex.gridPos == targetPos)
-			{
-				// If we made it to our target, reconstruct the path by going back up the parents.
-				do
-				{
-					_currentPath.Add(currentVertex.gridPos);
-					currentVertex = currentVertex.parent;
-				} while (currentVertex != null);
-				// Need to reverse the path before we return it. 
-				_currentPath.Reverse();
-				return;
-			}
-
-			// First, check to see if we've gone too far. 
-			if (currentVertex.numHops >= maxHops)
-			{
-				continue; // Don't expand if we're already too far. 
-			}
-			for (int x = (int)currentVertex.gridPos.x - 1; x <= (int)currentVertex.gridPos.x + 1; x++)
-			{
-				for (int y = (int)currentVertex.gridPos.y - 1; y <= (int)currentVertex.gridPos.y + 1; y++)
-				{
-					if (x == (int)currentVertex.gridPos.x && y == (int)currentVertex.gridPos.y)
-					{
-						continue; // Ignore our own coordinate.
-					}
-
-					Vector2 neighborPos = new Vector2(x, y);
-					// We ignore the neighbor if it's in the closed set 
-					if (listContainsPosition(_closedSet, neighborPos))
-					{
-						continue;
-					}
-
-					// Now check if we can even move onto that spot. 
-					if (!canMoveBetweenPoints(currentVertex.gridPos, neighborPos, pathColliderRadius))
-					{
-						continue;
-					}
-
-					// Now we have to see if the vertex is aleady in the agenda. 
-
-					float tentativeCostFromStart = currentVertex.costFromStart + Vector2.Distance(currentVertex.gridPos, neighborPos);
-
-					SearchVertex neighborVertex = null;
-					foreach (SearchVertex vertex in _agenda)
-					{
-						if (vertex.gridPos == neighborPos)
-						{
-							neighborVertex = vertex;
-							break;
-						}
-					}
-					if (neighborVertex == null)
-					{
-						neighborVertex = new SearchVertex();
-						neighborVertex.gridPos = neighborPos;
-						neighborVertex.costFromStart = tentativeCostFromStart;
-						neighborVertex.estimatedCostToTarget = tentativeCostFromStart + estimatePathDistance(neighborPos, targetPos);
-						neighborVertex.parent = currentVertex;
-						neighborVertex.numHops = currentVertex.numHops + 1;
-						_agenda.Add(neighborVertex);
-					}
-					else
-					{
-						if (tentativeCostFromStart < neighborVertex.costFromStart)
-						{
-							neighborVertex.costFromStart = tentativeCostFromStart;
-							neighborVertex.estimatedCostToTarget = tentativeCostFromStart + estimatePathDistance(neighborPos, targetPos);
-							neighborVertex.parent = currentVertex;
-							neighborVertex.numHops = currentVertex.numHops + 1;
-						}
-					}
-				}
-			}
-		}
-
-		// If we never reached the target, use the node from the closed set with the smallest estimated distance to target. 
-		if (_closedSet.Count == 0)
-		{
-			return;
-		}
-
-		SearchVertex closestVertex = _closedSet[0];
-		float closestVertexDistance = Vector2.Distance(closestVertex.gridPos, targetPos);
-		foreach (SearchVertex vertex in _closedSet)
-		{
-			float vertexDistance = Vector2.Distance(vertex.gridPos, targetPos);
-			if (vertexDistance < closestVertexDistance)
-			{
-				closestVertex = vertex;
-				closestVertexDistance = vertexDistance;
-			}
-		}
-
-		do
-		{
-			_currentPath.Add(closestVertex.gridPos);
-			closestVertex = closestVertex.parent;
-		} while (closestVertex != null);
-		_currentPath.Reverse();
-	}
-
-	protected float estimatePathDistance(Vector2 gridPos1, Vector2 gridPos2)
-	{
-		return Vector2.Distance(gridPos1, gridPos2);
-	}
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject == tileWereChasing.gameObject)
+        {
+            die();
+        }
+    }
 }
