@@ -73,6 +73,7 @@ public class FriendlyEnemy : BasicAICreature
         this.removeTag(TileTags.Enemy);
         this.addTag(TileTags.Friendly);
         howToUI.SetActive(false);
+        friendlyUI.SetActive(true);
     }
 
     public override void Start()
@@ -114,14 +115,14 @@ public class FriendlyEnemy : BasicAICreature
 
         CheckIfShouldChange();
 
-        if (!activateUI && Vector3.Distance(_playerTransform.position, this.transform.position) < friendlyRange)
+        if (!isFriendly && !activateUI && Vector3.Distance(_playerTransform.position, this.transform.position) < friendlyRange)
         {
             activateUI = true;
             friendlyUI.SetActive(false);
             howToUI.SetActive(true);
         }
 
-        if (activateUI && Vector3.Distance(_playerTransform.position, this.transform.position) > friendlyRange)
+        if (!isFriendly && activateUI && Vector3.Distance(_playerTransform.position, this.transform.position) > friendlyRange)
         {
             activateUI = false;
             friendlyUI.SetActive(false);
