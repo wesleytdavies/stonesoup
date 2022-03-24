@@ -4,21 +4,25 @@ using UnityEngine;
 using System;
 
 /// <summary>
-/// The dog is supposed to chase the bone and damage any enemies in its path. I haven't gotten it to work quite yet!
+/// The dog chases the bone and damages any enemies in its path.
 /// </summary>
 public class Dog : Tile
 {
     public Tile tileWereChasing;
+    public Tile tileThatThrewUs;
+
+    protected TileTags _attackTag;
+    [SerializeField] protected AudioClip _dogBark;
 
     private void Start()
     {
-        //StartCoroutine(MoveToTarget(tileWereChasing));
         _body = GetComponent<Rigidbody2D>();
+        AudioManager.playAudio(_dogBark);
     }
 
     private void Update()
     {
-        _body.position = Vector2.MoveTowards(transform.position, tileWereChasing.transform.position, 0.1f);
+        _body.position = Vector2.MoveTowards(transform.position, tileWereChasing.transform.position, 0.2f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

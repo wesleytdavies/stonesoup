@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// The bone can be thrown, which attracts the dog. Based off apt283Rock script.
+/// The bone can be thrown, which spawns and attracts a dog. Based off apt283Rock script.
 /// </summary>
 public class Bone : Tile
 {
@@ -94,6 +94,12 @@ public class Bone : Tile
 				_collider.isTrigger = true;
 				addTag(TileTags.CanBeHeld);
 				_isInAir = false;
+				//still spawn the dog since no collision was made
+				if (_thisDog == null)
+				{
+					_thisDog = Instantiate(dogPrefab, _tileThatThrewUs.transform.position, Quaternion.identity);
+					_thisDog.tileWereChasing = this;
+				}
 			}
 		}
 		if (_tileHoldingUs != null)
@@ -118,6 +124,7 @@ public class Bone : Tile
             {
                 _thisDog = Instantiate(dogPrefab, _tileThatThrewUs.transform.position, Quaternion.identity);
                 _thisDog.tileWereChasing = this;
+				_thisDog.tileThatThrewUs = this;
             }
         }
 	}

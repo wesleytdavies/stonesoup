@@ -194,11 +194,6 @@ MonoBehaviour:
   heldAngle: 0
   tileWereHolding: {fileID: 0}
   aimDirection: {x: 0, y: 0}
-  moveSpeed: 5
-  moveAcceleration: 100
-  tagsWeChase: 66
-  damageForce: 1000
-  damageAmount: 1
-  maxDistanceToContinueChase: 12
-  maxSearchDepth: 6
-  pathColliderRadius: 0.7
+  tileWereChasing: {fileID: 0}
+  tileThatThrewUs: {fileID: 0}
+  _dogBark: {fileID: 8300000, guid: 07451fa1ef0134979b771c98bf7c9206, type: 3}
